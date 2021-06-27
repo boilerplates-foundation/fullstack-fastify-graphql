@@ -1,0 +1,38 @@
+# Login (authorization) schema
+# @author Junaid Atari <mj.atari@gmail.com>
+# @link https://github.com/blacksmoke26 Author Website
+# @since 2021-06-27
+
+""" Details to auth user """
+input LoginInput {
+	""" Email address """
+	email: EmailAddress!
+	""" A valid password """
+	password: String!
+}
+
+""" Response taht will return after successful authorization """
+type LoginResponse {
+	""" Account details """
+	me: Me!
+	""" Authorization token """
+	token: AuthToken!
+}
+
+type Mutation  {
+	""" Authenticate user by credentials """
+	login (
+		""" Details to auth user """
+		input: LoginInput!,
+		""" Set authorization cookie after successfull logged in """
+		cookie: Boolean = false
+	) : LoginResponse! @guest @cost(complexity: 5)
+
+	""" Logout current user """
+	logout: Boolean! @auth @cost(complexity: 5)
+}
+
+type Subscription {
+	""" Subscribe for auth user logout """
+	userLogout: Me @cost(complexity: 1)
+}

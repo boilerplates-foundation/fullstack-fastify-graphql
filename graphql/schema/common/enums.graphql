@@ -1,0 +1,15 @@
+# @author Junaid Atari <mj.atari@gmail.com>
+# @link https://github.com/blacksmoke26 Author Website
+# @since 2021-06-27
+
+enum UserRole {
+	CUSTOMER
+}
+
+enum UserStatus {
+	ACTIVE
+	INACTIVE
+	DELETED
+	BLOCKED
+	DISABLED
+}

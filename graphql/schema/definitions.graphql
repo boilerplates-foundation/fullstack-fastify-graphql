@@ -1,0 +1,21 @@
+# Base Schema
+# @author Junaid Atari <mj.atari@gmail.com>
+# @link https://github.com/blacksmoke26 Author Website
+# @since 2021-06-16
+
+scalar Date
+scalar Time
+scalar DateTime
+scalar JSON
+scalar Upload
+
+scalar NonPositiveInt
+scalar PositiveInt
+scalar NonNegativeInt
+scalar NegativeInt
+scalar NonPositiveFloat
+scalar PositiveFloat
+scalar NonNegativeFloat
+scalar NegativeFloat
+scalar EmailAddress
+scalar URL

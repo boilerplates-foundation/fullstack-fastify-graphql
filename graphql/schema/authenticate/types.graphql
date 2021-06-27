@@ -1,0 +1,13 @@
+# Authorization common types
+# @author Junaid Atari <mj.atari@gmail.com>
+# @link https://github.com/blacksmoke26 Author Website
+# @since 2021-06-27
+
+type AuthToken {
+	# Authorization access token
+	token: String
+	# Token expiry timestamp (e.g., 0000-00-00T00:00:00+00:00)
+	expiresAt: DateTime
+	# Token issued timestamp (e.g., 0000-00-00T00:00:00+00:00)
+	issuedAt: DateTime
+}

@@ -1,0 +1,44 @@
+# User Schema
+# @author Junaid Atari <mj.atari@gmail.com>
+# @link https://github.com/blacksmoke26 Author Website
+# @since 2021-06-27
+
+type UserAccountType {
+	title: String!
+	value: PositiveInt!
+	type: UserRole
+}
+
+type Me @cost(complexity: 1) {
+	id: Int!
+	firstName: String!
+	lastName: String!
+	email: String!
+	username: String!
+	role: UserAccountType!
+	language: String!
+	timezone: String!
+	created: DateTime!
+	status: RecordStatus!
+	""" Filtered/Mapped meta data """
+	metaMapped: JSON!
+}
+
+type MyloginHistory @cost(complexity: 1) {
+	lastIp: String
+	lastDate: DateTime
+	successful: MyLoginHistorySuccessful
+	failed: MyLoginHistoryFailed
+}
+
+type MyLoginHistoryFailed {
+	counts: Int
+}
+
+type MyLoginHistorySuccessful {
+	counts: Int
+}
+
+type Query {
+	me: Me @auth
+}
